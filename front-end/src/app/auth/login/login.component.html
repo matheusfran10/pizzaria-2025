@@ -1,0 +1,55 @@
+<div class="login-container">
+  <mat-card appearance="outlined" class="login-card">
+    <h2 class="title-login">Entrar</h2>
+
+    <form
+      (ngSubmit)="onLogin()"
+      #loginForm="ngForm"
+      autocomplete="off"
+      novalidate
+    >
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input
+          matInput
+          type="email"
+          name="email"
+          required
+          placeholder="Digite seu email"
+          [(ngModel)]="email"
+          #emailInput="ngModel"
+        />
+        <mat-error *ngIf="emailInput.invalid && emailInput.touched">
+          Por favor, insira um email válido.
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Senha</mat-label>
+        <input
+          matInput
+          type="password"
+          name="senha"
+          required
+          minlength="6"
+          placeholder="Digite sua senha"
+          [(ngModel)]="senha"
+          #senhaInput="ngModel"
+        />
+        <mat-error *ngIf="senhaInput.invalid && senhaInput.touched">
+          A senha deve ter ao menos 6 caracteres.
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        mat-raised-button
+        color="primary"
+        class="full-width"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Entrar
+      </button>
+    </form>
+  </mat-card>
+</div>
