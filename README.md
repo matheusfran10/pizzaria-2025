@@ -1,4 +1,4 @@
-# 🍕 Pizzaria Web - Angular
+# 🍕 Pizzaria Web
 Projeto de interface web responsiva desenvolvido com Angular, com foco em gestão de pizzaria, incluindo funcionalidades como cadastro de produtos, categorias e gerenciamento de pedidos. Ideal para sistemas internos de controle de restaurantes e pizzarias.
 
 ---
