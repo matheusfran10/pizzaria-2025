@@ -43,7 +43,7 @@ Clone o repositório:
 
 git clone https://github.com/matheusfran10/pizzaria-angular.git
 
-cd pizzaria-angular
+cd frontend/pizzaria-web
 
 npm install
 
