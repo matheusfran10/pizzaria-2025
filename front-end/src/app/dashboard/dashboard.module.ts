@@ -4,6 +4,11 @@ import { CategoryComponent } from './category/category.component';
 import { ProdutcComponent } from './produtc/produtc.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrdersDetailsComponent } from './orders/orders-details/orders-details.component';
+import { RouterModule } from '@angular/router';
+import { NewProductComponent } from './produtc/new-product/new-product.component';
+import { NewCategoryComponent } from './category/new-category/new-category.component';
+import { NewOrdersComponent } from './orders/new-orders/new-orders.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 
@@ -12,10 +17,15 @@ import { OrdersDetailsComponent } from './orders/orders-details/orders-details.c
     CategoryComponent,
     ProdutcComponent,
     OrdersComponent,
-    OrdersDetailsComponent
+    OrdersDetailsComponent,
+    NewProductComponent,
+    NewCategoryComponent,
+    NewOrdersComponent,
+    MenuComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
   ]
 })
 export class DashboardModule { }

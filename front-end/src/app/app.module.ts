@@ -11,12 +11,11 @@ import { LayoutComponent } from './layout/layout.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+
 
 // Angular Material
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 
 @NgModule({
@@ -31,16 +30,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-
+    RouterModule,
     // Módulos customizados
     AuthModule,
     DashboardModule,
-
-    // 👇 Angular Material aqui
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
 
     
   ],

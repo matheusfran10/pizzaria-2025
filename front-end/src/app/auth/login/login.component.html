@@ -1,55 +1,63 @@
 <div class="login-container">
-  <mat-card appearance="outlined" class="login-card">
-    <h2 class="title-login">Entrar</h2>
+  <div class="login-card">
+    <div class="login-card-box-title">
+      <h1 class="login-card-box-title__brand">
+        Sujeito<span class="red">Pizza</span>
+      </h1>
+    </div>
 
-    <form
-      (ngSubmit)="onLogin()"
-      #loginForm="ngForm"
-      autocomplete="off"
-      novalidate
-    >
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Email</mat-label>
+    <form (ngSubmit)="onLogin()" #loginForm="ngForm" novalidate>
+      <div class="login-card-e-s">
         <input
-          matInput
           type="email"
+          class="login-card-e-s__input"
+          id="email"
           name="email"
           required
-          placeholder="Digite seu email"
           [(ngModel)]="email"
           #emailInput="ngModel"
+          placeholder="Digite seu email"
         />
-        <mat-error *ngIf="emailInput.invalid && emailInput.touched">
+        <div
+          class="login-card-e-s__invalid"
+          *ngIf="emailInput.invalid && emailInput.touched"
+        >
           Por favor, insira um email válido.
-        </mat-error>
-      </mat-form-field>
+        </div>
+      </div>
 
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Senha</mat-label>
+      <div class="login-card-e-s">
         <input
-          matInput
           type="password"
+          class="login-card-e-s__input"
+          id="senha"
           name="senha"
           required
           minlength="6"
-          placeholder="Digite sua senha"
           [(ngModel)]="senha"
           #senhaInput="ngModel"
+          placeholder="Digite sua senha"
         />
-        <mat-error *ngIf="senhaInput.invalid && senhaInput.touched">
+        <div
+          class="login-card-e-s__invalid"
+          *ngIf="senhaInput.invalid && senhaInput.touched"
+        >
           A senha deve ter ao menos 6 caracteres.
-        </mat-error>
-      </mat-form-field>
+        </div>
+      </div>
 
       <button
-        mat-raised-button
-        color="primary"
-        class="full-width"
         type="submit"
+        class="login-card__botton btn"
         [disabled]="loginForm.invalid"
       >
-        Entrar
+        Acessar
       </button>
     </form>
-  </mat-card>
+    <p class="login-register">
+      <a routerLink="/register" class="login-register__p">
+        Registrar minha empresa
+      </a>
+    </p>
+  </div>
 </div>

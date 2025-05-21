@@ -1,1 +1,62 @@
-<p>register works!</p>
+<div class="register-container">
+  <div class="register-card">
+    <div class="register-card-box-title">
+      <h1 class="register-card-box-title__brand">
+        Sujeito<span class="red">Pizza</span>
+      </h1>
+    </div>
+
+    <form (ngSubmit)="onRegister()" #registerForm="ngForm" novalidate>
+      <div class="register-card-n-e-s">
+        <input
+          type="email"
+          class="register-card-n-e-s__input"
+          id="email"
+          name="email"
+          required
+          [(ngModel)]="email"
+          #emailInput="ngModel"
+          placeholder="Nome da Empresa"
+        />
+      </div>
+      <div class="register-card-n-e-s">
+        <input
+          type="email"
+          class="register-card-n-e-s__input"
+          id="email"
+          name="email"
+          required
+          [(ngModel)]="email"
+          #emailInput="ngModel"
+          placeholder="Digite seu email"
+        />
+      </div>
+
+      <div class="register-card-n-e-s">
+        <input
+          type="password"
+          class="register-card-n-e-s__input"
+          id="senha"
+          name="senha"
+          required
+          minlength="6"
+          [(ngModel)]="senha"
+          #senhaInput="ngModel"
+          placeholder="Digite sua senha"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="register-card__botton btn"
+        [disabled]="registerForm.invalid"
+      >
+        Acessar
+      </button>
+    </form>
+
+    <p class="register-r__p">
+      <a routerLink="/" class="register-r__p">Já possuo uma conta?</a>
+    </p>
+  </div>
+</div>

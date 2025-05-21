@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f5f5f5;
+  background: #1d1d2e;
   padding: 16px;
   box-sizing: border-box;
 }
@@ -12,21 +12,68 @@
   width: 100%;
   max-width: 400px;
   padding: 24px 32px;
-  box-sizing: border-box;
+  background: #1d1d2e;
+  border: none;
+
+  &__botton {
+    background: #ff3d3d;
+    width: 100%;
+    height: 40px;
+    color: white;
+    border: none;
+  }
 }
 
-.title-login {
-  margin: 0 0 24px 0;
-  font-weight: 600;
-  font-size: 28px;
+.login-card-box-title {
   text-align: center;
+
+  &__brand {
+    margin: 0 0 24px 0;
+    font-weight: 600;
+    font-size: 50px;
+    color: white;
+  }
+
+  &__brand .red {
+    color: #ff3f4b;
+  }
 }
 
-.full-width {
-  width: 100%;
-  margin-bottom: 20px; 
+.login-card-e-s {
+  &__input {
+    margin-bottom: 15px;
+    background-color: #1d1d2e;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    color: white;
+    width: 100%;
+    outline: none;
+  }
+
+  &__input::placeholder {
+    color: #aaa;
+  }
+
+  &__input:focus {
+    border-color: #ff3d3d;
+  }
+
+  &__invalid {
+    color: #ff3f4b;
+    margin-top: 1px;
+    margin-bottom: 5px;
+  }
 }
 
-input {
-  background-color: aqua;
+.login-register {
+  &__p {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 10px;
+    text-decoration: none;
+  }
 }

@@ -1,4 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #1d1d2e;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+body::before {
+  content: 'SujeitoPizza';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  font-size: 150px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+
+.menu-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1d1d2e;
+  padding: 16px;
+  box-sizing: border-box;
+
+}
+
+.menu-card {
+  width: 100%;
+  max-width: 900px;
+  padding: 24px 32px;
+  background: #1d1d2e;
+  text-align: center;
+}
+
+.menu-title {
+  font-weight: 600;
+  font-size: 40px;
+  color: white;
+  margin-bottom: 32px;
+
+  .red {
+    color: #ff3f4b;
+  }
+}
+
+.menu-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.menu-item-card {
+  background: #2c2c3a;
+  color: white;
+  padding: 24px;
+  border-radius: 8px;
+  width: 250px;
+  text-align: left;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+  h2 {
+    margin: 0 0 12px;
+    font-size: 20px;
+    color: #ff3f4b;
+  }
+
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  &:hover {
+    background: #3a3a4f;
+    transform: scale(1.03);
+  }
+}
