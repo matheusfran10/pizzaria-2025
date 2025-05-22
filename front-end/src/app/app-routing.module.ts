@@ -1,18 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+// Auth
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { CategoryComponent } from './dashboard/category/category.component';
-import { OrdersDetailsComponent } from './dashboard/orders/orders-details/orders-details.component';
+
+// Layout + Menu principal
 import { LayoutComponent } from './layout/layout.component';
-import { OrdersComponent } from './dashboard/orders/orders.component';
-import { AuthGuard } from './guards/auth.guard';
-import { ProdutcComponent } from './dashboard/produtc/produtc.component';
 import { MenuComponent } from './dashboard/menu/menu.component';
+
+// Categoria
+import { CategoryComponent } from './dashboard/category/category.component';
 import { NewCategoryComponent } from './dashboard/category/new-category/new-category.component';
-import { NewOrdersComponent } from './dashboard/orders/new-orders/new-orders.component';
+
+// Produto
+import { ProdutcComponent } from './dashboard/produtc/produtc.component';
 import { NewProductComponent } from './dashboard/produtc/new-product/new-product.component';
 
+// Pedidos
+import { OrdersComponent } from './dashboard/orders/orders.component';
+import { NewOrdersComponent } from './dashboard/orders/new-orders/new-orders.component';
+import { OrdersDetailsComponent } from './dashboard/orders/orders-details/orders-details.component';
+
+// Guards
+import { AuthGuard } from './guards/auth.guard';
+import { EditCategoryComponent } from './dashboard/category/edit-category/edit-category.component';
+import { EditProductComponent } from './dashboard/produtc/edit-product/edit-product.component';
+import { UserComponent } from './dashboard/user/user.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent, pathMatch: 'full' },
@@ -20,25 +34,40 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: LayoutComponent,
-   // canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
-      { path: 'menu', component: MenuComponent}, // Minha página inical
-      { path: 'categoria', component: CategoryComponent },
-      { path: 'categoria/nova', component: NewCategoryComponent },
-      { path: 'produto', component: ProdutcComponent },
-      { path: 'produto/novo', component: NewProductComponent },
+      { path: 'menu', component: MenuComponent },
+
+      // Categorias
+      { path: 'categorias', component: CategoryComponent },
+      { path: 'categorias/nova', component: NewCategoryComponent },
+      { path: 'categorias/editar', component: EditCategoryComponent },
+
+      // Produtos
+      { path: 'produtos', component: ProdutcComponent },
+      { path: 'produtos/novo', component: NewProductComponent },
+      { path: 'produtos/categoria/editar', component: ProdutcComponent },
+      { path: 'produtos/editar', component: EditProductComponent },
+
+      // Pedidos
       { path: 'pedidos', component: OrdersComponent },
       { path: 'pedidos/novo', component: NewOrdersComponent },
-      { path: 'pedido/:id', component: OrdersDetailsComponent },
-      { path: '', redirectTo: 'pedidos', pathMatch: 'full' }
+      { path: 'pedidos/ativos', component: OrdersComponent }, 
+      { path: 'pedidos/:id', component: OrdersDetailsComponent },
+
+      // Usuarios
+
+      { path: 'usuarios', component: UserComponent },
+
+      { path: '', redirectTo: 'menu', pathMatch: 'full' }
     ]
-  }
-]
+  },
+
+  { path: '**', redirectTo: '' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-
-
 export class AppRoutingModule { }

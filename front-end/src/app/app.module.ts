@@ -12,6 +12,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+import { MenuComponent } from './dashboard/menu/menu.component';
 
 
 // Angular Material

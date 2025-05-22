@@ -1,1 +1,18 @@
-<p>new-category works!</p>
+<div class="category-page">
+  <div class="category-card">
+    <h2>Nova categoria</h2>
+
+    <input
+      type="text"
+      [(ngModel)]="categoryName"
+      placeholder="Digite o nome para categoria"
+      class="category-input"
+    />
+    <div class="category-actions">
+      <button class="category-button" (click)="cadastrarCategoria()">
+        Cadastrar
+      </button>
+      <a class="cancel-link" routerLink="/dashboard/categorias">Cancelar</a>
+    </div>
+  </div>
+</div>

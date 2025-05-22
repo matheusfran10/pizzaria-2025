@@ -1,1 +1,50 @@
-<p>produtc works!</p>
+<div class="product-container">
+  <div class="product-header">
+    <h1>Produtos</h1>
+
+    <div class="product-header__actions">
+      <a routerLink="/dashboard/produtos/novo" class="btn neon-btn"
+        >+ Adicionar</a
+      >
+      <input
+        type="text"
+        placeholder="Pesquisar..."
+        [(ngModel)]="searchTerm"
+        class="search-input"
+      />
+    </div>
+  </div>
+
+  <div class="product-table-container">
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Preço</th>
+          <th>Categoria</th>
+          <th>Criado em</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.name }}</td>
+          <td>R$ {{ product.price | number : "1.2-2" }}</td>
+          <td>{{ product.category }}</td>
+          <td>{{ product.created_at | date : "dd/MM/yyyy" }}</td>
+          <td>
+            <a
+              class="btn neon-btn"
+              [routerLink]="['/dashboard/produtos/editar',]"
+            >
+              Editar
+            </a>
+            <button class="btn danger-btn" (click)="deletarProduto('')">
+              Excluir
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

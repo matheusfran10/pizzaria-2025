@@ -1,18 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-
-html { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html {
+  height: 100%;
+}
 
 body {
   margin: 0;
   padding: 0;
   background: #1d1d2e;
-  font-family: Arial, sans-serif;
+  font-family: Roboto, "Helvetica Neue", Arial, sans-serif;
   color: white;
 }
 
 body::before {
-  content: 'SujeitoPizza';
+  content: "SujeitoPizza";
   position: fixed;
   top: 50%;
   left: 50%;
@@ -26,16 +25,15 @@ body::before {
   white-space: nowrap;
 }
 
-
 .menu-container {
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #1d1d2e;
   padding: 16px;
   box-sizing: border-box;
-
 }
 
 .menu-card {
@@ -51,10 +49,10 @@ body::before {
   font-size: 40px;
   color: white;
   margin-bottom: 32px;
+}
 
-  .red {
-    color: #ff3f4b;
-  }
+.menu-title .red {
+  color: #ff3f4b;
 }
 
 .menu-grid {
@@ -74,21 +72,60 @@ body::before {
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
 
-  h2 {
-    margin: 0 0 12px;
-    font-size: 20px;
-    color: #ff3f4b;
+.menu-item-card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  color: #ff3f4b;
+}
+
+.menu-item-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.menu-item-card:hover {
+  background: #3a3a4f;
+  transform: scale(1.03);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-title {
+    font-size: 32px;
   }
 
-  p {
-    margin: 0;
-    font-size: 14px;
-    color: #ccc;
+  .menu-item-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-title {
+    font-size: 24px;
   }
 
-  &:hover {
-    background: #3a3a4f;
-    transform: scale(1.03);
+  .menu-card {
+    padding: 16px;
+  }
+
+  .menu-item-card {
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .menu-item-card h2 {
+    font-size: 18px;
+  }
+
+  .menu-item-card p {
+    font-size: 13px;
+  }
+
+  body::before {
+    font-size: 80px;
   }
 }

@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./new-category.component.scss']
 })
 export class NewCategoryComponent {
-
+  categoryName: string = '';
+  
+  cadastrarCategoria() {
+    if (this.categoryName.trim()) {
+      console.log('Categoria cadastrada:', this.categoryName);  
+      this.categoryName = ''; 
+    }
+  }
 }
