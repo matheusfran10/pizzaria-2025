@@ -1,1 +1,23 @@
-<p>list-product-by-category works!</p>
+<div class="container">
+  <h2>Listar Produtos por Categoria</h2>
+
+  <select [(ngModel)]="selectedCategoryId" class="input">
+    <option [ngValue]="null" disabled selected>Selecione uma categoria</option>
+    <option *ngFor="let cat of categories" [ngValue]="cat.id">
+      {{ cat.name }}
+    </option>
+  </select>
+ 
+    <button class="btn" [disabled]="!selectedCategoryId">Buscar</button>
+  
+  <ul class="list" *ngIf="filteredProducts.length">
+    <li *ngFor="let product of filteredProducts">
+      <strong>{{ product.name }}</strong> — R$ {{ product.price.toFixed(2) }}
+      <p>{{ product.descripiton }}</p>
+    </li>
+  </ul>
+
+  <p *ngIf="selectedCategoryId && filteredProducts.length === 0">
+    Nenhum produto encontrado nesta categoria.
+  </p>
+</div>

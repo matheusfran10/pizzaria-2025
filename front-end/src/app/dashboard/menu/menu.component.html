@@ -6,15 +6,23 @@
 
     <div class="menu-grid">
       <a routerLink="/dashboard/pedidos" class="menu-item-card">
-        <h2>Pedidos</h2>
+        <h2>Pedidos <span class="admin-only">(somente ADM)</span></h2>
         <p>Gerencie os pedidos dos clientes em tempo real.</p>
       </a>
       <a routerLink="/dashboard/produtos" class="menu-item-card">
-        <h2>Cardápio</h2>
+        <h2>Produtos <span class="admin-only">(somente ADM)</span></h2>
         <p>Adicione e edite os produtos disponíveis para venda.</p>
       </a>
+      <a routerLink="/dashboard/cardapio" class="menu-item-card">
+        <h2>Cardápio</h2>
+        <p>Escolha entre todos nossos diversos pratos.</p>
+      </a>
+      <a routerLink="/dashboard/pedidos/novo" class="menu-item-card">
+        <h2>Fazer Pedido</h2>
+        <p>Faça seu pedido!</p>
+      </a>
       <a routerLink="/dashboard/categorias" class="menu-item-card">
-        <h2>Categorias</h2>
+        <h2>Categorias <span class="admin-only">(somente ADM)</span></h2>
         <p>Organize seus produtos por categorias.</p>
       </a>
       <a routerLink="/dashboard/usuarios" class="menu-item-card">

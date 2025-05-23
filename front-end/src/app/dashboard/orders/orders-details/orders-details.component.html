@@ -1,1 +1,37 @@
-<p>orders-details works!</p>
+
+<div class="container p-4 text-white">
+  <div class="order-details-container">
+  <h2>Detalhes do Pedido - {{ order.name }}</h2>
+
+  <div class="order-info">
+    <p><strong>Mesa:</strong> {{ order.tableId }}</p>
+    <p><strong>Usuário:</strong> {{ order.userId }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <p><strong>Rascunho:</strong> {{ order.draft ? 'Sim' : 'Não' }}</p>
+    <p><strong>Criado em:</strong> {{ order.created_at | date:'dd/MM/yyyy HH:mm' }}</p>
+    <p><strong>Atualizado em:</strong> {{ order.updated_at | date:'dd/MM/yyyy HH:mm' }}</p>
+  </div>
+
+  <h3>Itens do Pedido</h3>
+
+  <div *ngIf="items.length > 0; else noItems">
+    <ul>
+      <li *ngFor="let item of items">
+        Produto #{{ item.productId }} – Quantidade: {{ item.amount }}
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noItems>
+    <p class="empty-msg">Nenhum item encontrado para este pedido.</p>
+  </ng-template>
+
+  <!-- Botões -->
+  <div class="button-group">
+    <button class="btn btn-back" (click)="goBack()">← Voltar para pedidos</button>
+    <button class="btn btn-finish" (click)="finalizeOrder()">✅ Finalizar Pedido</button>
+    <button class="btn btn-cancel" (click)="cancelOrder()">❌ Cancelar Pedido</button>
+  </div>
+</div>
+
+</div>

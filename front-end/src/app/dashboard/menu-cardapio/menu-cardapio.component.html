@@ -1,0 +1,23 @@
+<div class="menu-cardapio">
+  <div class="meu-cardapio__header">
+    <h1>Cardápio</h1>
+    <button routerLink="/dashboard/pedidos/novo">Fazer um Pedido</button>
+  </div>
+
+  <div *ngFor="let category of categories" class="category-section">
+    <h3>{{ category.name }}</h3>
+
+    <div class="product-grid">
+      <div class="product-card" *ngFor="let product of category.products">
+        <img [src]="'/assets/' + product.banner" alt="{{ product.name }}" />
+        <div class="info">
+          <h4>{{ product.name }}</h4>
+          <p>{{ product.descripiton }}</p>
+          <p>
+            <strong>R$ {{ product.price.toFixed(2) }}</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

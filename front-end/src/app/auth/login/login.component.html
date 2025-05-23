@@ -45,19 +45,23 @@
           A senha deve ter ao menos 6 caracteres.
         </div>
       </div>
-
-      <button
+      <a
+        type="submit"
+        class="login-card__botton btn"
+        routerLink="/dashboard/menu"
+      >
+        Acessar
+      </a>
+      <!-- <button
         type="submit"
         class="login-card__botton btn"
         [disabled]="loginForm.invalid"
       >
         Acessar
-      </button>
+      </button> -->
     </form>
     <p class="login-register">
-      <a routerLink="/register" class="login-register__p">
-        Registrar minha empresa
-      </a>
+      <a routerLink="/register" class="login-register__p"> Cadastra-se </a>
     </p>
   </div>
 </div>

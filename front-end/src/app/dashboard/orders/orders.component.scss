@@ -1,0 +1,43 @@
+body {
+  background-color: #1e1e2f;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+}
+
+.container {
+  background-color: none;
+  padding: 2rem;
+  min-height: 60vh;
+  color: #e0e0e0;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.refresh-icon {
+  color: #00ff9d;
+  cursor: pointer;
+}
+
+.order-card {
+  background-color: #141324;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #00ff9d;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.order-card:hover {
+  transform: translateX(5px);
+}

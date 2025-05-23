@@ -21,8 +21,11 @@
         <tr>
           <th>Nome</th>
           <th>Preço</th>
-          <th>Categoria</th>
-          <th>Criado em</th>
+          <th>
+            <a [routerLink]="['/dashboard/produtos/lista-produtos']"
+              >Categoria</a
+            >
+          </th>
           <th>Ações</th>
         </tr>
       </thead>
@@ -30,12 +33,15 @@
         <tr *ngFor="let product of products">
           <td>{{ product.name }}</td>
           <td>R$ {{ product.price | number : "1.2-2" }}</td>
-          <td>{{ product.category }}</td>
-          <td>{{ product.created_at | date : "dd/MM/yyyy" }}</td>
+          <td>
+            <a [routerLink]="['/dashboard/produtos/lista-produtos']">{{
+              product.category
+            }}</a>
+          </td>
           <td>
             <a
               class="btn neon-btn"
-              [routerLink]="['/dashboard/produtos/editar',]"
+              [routerLink]="['/dashboard/produtos/editar']"
             >
               Editar
             </a>
