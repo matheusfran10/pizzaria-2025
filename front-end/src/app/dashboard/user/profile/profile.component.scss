@@ -1,0 +1,41 @@
+.profile-container {
+  background-color: #1c1c1c;
+  color: #f1f1f1;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+input {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+  padding: 6px;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn-green {
+  background-color: #00ff88;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+hr {
+  margin: 30px 0;
+  border-color: #444;
+}

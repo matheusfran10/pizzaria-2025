@@ -7,51 +7,114 @@
     </div>
 
     <form (ngSubmit)="onRegister()" #registerForm="ngForm" novalidate>
+      <!-- Nome -->
       <div class="register-card-n-e-s">
         <input
-          type="email"
+          type="text"
           class="register-card-n-e-s__input"
-          id="email"
-          name="email"
+          name="name"
+          [(ngModel)]="user.name"
           required
-          [(ngModel)]="email"
-          #emailInput="ngModel"
           placeholder="Digite seu nome"
         />
       </div>
+
+      <!-- Email -->
       <div class="register-card-n-e-s">
         <input
           type="email"
           class="register-card-n-e-s__input"
-          id="email"
           name="email"
+          [(ngModel)]="user.email"
           required
-          [(ngModel)]="email"
-          #emailInput="ngModel"
-          placeholder="Digite seu email"
+          placeholder="Digite seu e-mail"
         />
       </div>
 
+      <!-- Telefone -->
+      <div class="register-card-n-e-s">
+        <input
+          type="text"
+          class="register-card-n-e-s__input"
+          name="phone"
+          [(ngModel)]="user.phone"
+          required
+          placeholder="Digite seu telefone"
+        />
+      </div>
+
+      <!-- Rua -->
+      <div class="register-card-n-e-s">
+        <input
+          type="text"
+          class="register-card-n-e-s__input"
+          name="street"
+          [(ngModel)]="user.address.street"
+          placeholder="Rua"
+          required
+        />
+      </div>
+
+      <!-- Número e Estado lado a lado -->
+      <div style="display: flex; gap: 10px;">
+        <input
+          type="text"
+          class="register-card-n-e-s__input"
+          name="number"
+          [(ngModel)]="user.address.number"
+          placeholder="Número"
+          required
+        />
+        <input
+          type="text"
+          class="register-card-n-e-s__input"
+          name="state"
+          [(ngModel)]="user.address.state"
+          placeholder="Estado"
+          required
+        />
+      </div>
+
+      <!-- Cidade e CEP lado a lado -->
+      <div style="display: flex; gap: 10px; margin-top: 15px;">
+        <input
+          type="text"
+          class="register-card-n-e-s__input"
+          name="city"
+          [(ngModel)]="user.address.city"
+          placeholder="Cidade"
+          required
+        />
+        <input
+          type="text"
+          class="register-card-n-e-s__input"
+          name="cep"
+          [(ngModel)]="user.address.Cep"
+          placeholder="CEP"
+          required
+        />
+      </div>
+
+      <!-- Senha -->
       <div class="register-card-n-e-s">
         <input
           type="password"
           class="register-card-n-e-s__input"
-          id="senha"
-          name="senha"
+          name="password"
+          [(ngModel)]="user.password"
           required
           minlength="6"
-          [(ngModel)]="senha"
-          #senhaInput="ngModel"
           placeholder="Digite sua senha"
         />
       </div>
 
+      <!-- Botão -->
       <button
         type="submit"
         class="register-card__botton btn"
         [disabled]="registerForm.invalid"
       >
-        Acessar
+        Registrar
       </button>
     </form>
 

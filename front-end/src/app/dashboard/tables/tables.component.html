@@ -1,1 +1,61 @@
-<p>tables works!</p>
+<div class="tables-container">
+  <h2>📋 Mesas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Número</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let table of tables">
+        <td *ngIf="editingTableId !== table.id">{{ table.number }}</td>
+        <td *ngIf="editingTableId === table.id">
+          <input [(ngModel)]="newTableNumber" type="number" />
+        </td>
+
+        <td>{{ getStatusLabel(table.status) }}</td>
+
+        <td>
+          <button
+            *ngIf="table.status === 0"
+            class="btn btn-success"
+            (click)="openTable(table)"
+          >
+            Abrir
+          </button>
+          <button
+            *ngIf="table.status === 1"
+            class="btn btn-danger"
+            (click)="closeTable(table)"
+          >
+            Fechar
+          </button>
+
+          <button
+            *ngIf="editingTableId !== table.id"
+            class="btn btn-primary"
+            (click)="enableEdit(table)"
+          >
+            Editar
+          </button>
+          <button
+            *ngIf="editingTableId === table.id"
+            class="btn btn-success"
+            (click)="saveEdit(table)"
+          >
+            Salvar
+          </button>
+          <button
+            *ngIf="editingTableId === table.id"
+            class="btn btn-danger"
+            (click)="cancelEdit()"
+          >
+            Cancelar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

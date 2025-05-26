@@ -1,8 +1,6 @@
 <div class="menu-container">
   <div class="menu-card">
-    <h1 class="menu-title">
-      Sujeito<span class="red">Pizza</span>
-    </h1>
+    <h1 class="menu-title">Sujeito<span class="red">Pizza</span></h1>
 
     <div class="menu-grid">
       <a routerLink="/dashboard/pedidos" class="menu-item-card">
@@ -25,9 +23,17 @@
         <h2>Categorias <span class="admin-only">(somente ADM)</span></h2>
         <p>Organize seus produtos por categorias.</p>
       </a>
-      <a routerLink="/dashboard/usuarios" class="menu-item-card">
-        <h2>Usuários</h2>
+      <a routerLink="/dashboard/usuarios-perfil" class="menu-item-card">
+        <h2>Meu Perfil</h2>
         <p>Perfil do usuário.</p>
+      </a>
+      <a routerLink="/dashboard/usuarios" class="menu-item-card">
+        <h2>Usuários <span class="admin-only">(somente ADM)</span></h2>
+        <p>Configurações do usuário.</p>
+      </a>
+      <a routerLink="/dashboard/pedidos/ativos" class="menu-item-card">
+        <h2>Pedidos Ativos <span class="admin-only">(somente ADM)</span></h2>
+        <p>Ver pedidos ativos.</p>
       </a>
     </div>
   </div>

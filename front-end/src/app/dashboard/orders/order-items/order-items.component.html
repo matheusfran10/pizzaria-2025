@@ -1,1 +1,25 @@
-<p>order-items works!</p>
+<div class="order-items-container">
+  <h3>Itens do Pedido #{{ order.id }} - Mesa {{ order.tableId }}</h3>
+
+  <div class="add-item-form">
+    <select [(ngModel)]="selectedProductId">
+      <option [value]="null">Selecione um produto</option>
+      <option *ngFor="let product of products" [value]="product.id">{{ product.name }}</option>
+    </select>
+
+    <input type="number" min="1" [(ngModel)]="newAmount" />
+
+    <button (click)="addItem()" class="btn btn-primary">Adicionar Item</button>
+  </div>
+
+  <ul *ngIf="items.length > 0" class="items-list">
+    <li *ngFor="let item of items; index as i" class="item">
+      {{ getProductName(item.productId) }} - Quantidade: {{ item.amount }}
+      <button (click)="removeItem(i)" class="btn btn-danger btn-sm">Remover</button>
+    </li>
+  </ul>
+
+  <button (click)="saveItems()" class="btn btn-success" [disabled]="items.length === 0">
+    Salvar Itens
+  </button>
+</div>

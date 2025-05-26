@@ -1,31 +1,36 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { User } from './models/user';
+import { Observable } from 'rxjs';
+import { Order } from './models/order';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-private baseUrl = 'http://localhost:3000/'; 
+ private baseUrl = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient) {}
 
-  getAll() {
-    return this.http.get<any[]>(this.baseUrl);
+  getAll(): Observable<User[]> {
+    return this.http.get<User[]>(this.baseUrl);
   }
 
-  getById(id: string) {
-    return this.http.get<any>(`${this.baseUrl}/${id}`);
+  getById(id: string): Observable<User> {
+    return this.http.get<User>(`${this.baseUrl}/${id}`);
   }
 
-  create(data: any) {
-    return this.http.post(this.baseUrl, data);
+   update(id: string, data: User): Observable<User> {
+    return this.http.put<User>(`${this.baseUrl}/${id}`, data);
   }
 
-  update(id: string, data: any) {
-    return this.http.put(`${this.baseUrl}/${id}`, data);
+  delete(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 
-  delete(id: string) {
-    return
+create(data: any) {
+  return this.http.post(`${this.baseUrl}users`, data); 
 }
+
+
 }

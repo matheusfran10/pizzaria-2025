@@ -1,1 +1,22 @@
-<p>active works!</p>
+<div class="active-orders-container">
+  <h2>Pedidos Pendentes</h2>
+
+  <div *ngIf="orders.length === 0">
+    Nenhum pedido pendente no momento.
+  </div>
+
+  <ul *ngIf="orders.length > 0" class="orders-list">
+    <li *ngFor="let order of orders" class="order-item">
+      <div class="order-info">
+        <strong>Pedido #{{ order.id }}</strong> - Mesa {{ order.tableId }} - {{ order.name }}
+      </div>
+
+      <div class="order-buttons">
+        <button (click)="finalizeOrder(order)" class="btn btn-success">Finalizar</button>
+        <button (click)="cancelOrder(order)" class="btn btn-danger">Cancelar</button>
+        <button (click)="editItems(order)" class="btn btn-primary">Editar Itens</button>
+        <button (click)="viewDetails(order)" class="btn btn-secondary" >Ver Detalhes</button>
+      </div>
+    </li>
+  </ul>
+</div>

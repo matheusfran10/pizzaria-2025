@@ -40,4 +40,8 @@ export class OrderService {
   getOrderById(id: number): Order | undefined {
   return this.mockOrders.find(o => o.id === id);
 }
+
+  getByUserId(userId: string) {
+  return this.http.get<Order[]>(`${this.baseUrl}/user/${userId}`);
+}
 }

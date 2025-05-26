@@ -1,1 +1,24 @@
-<p>user works!</p>
+<div class="user-list-container">
+  <div class="user-list-card">
+    <h1 class="user-list-title">Lista de Usuários</h1>
+
+    <div class="user-list-header">
+      <span>Nome</span>
+      <span>Email</span>
+      <span>Telefone</span>
+      <span>Cidade</span>
+      <span>Estado</span>
+    </div>
+
+    <div
+      class="user-list-row"
+      *ngFor="let user of users"
+    >
+      <span>{{ user.name }}</span>
+      <span>{{ user.email }}</span>
+      <span>{{ user.phone }}</span>
+      <span>{{ user.address?.city }}</span>
+      <span>{{ user.address?.state }}</span>
+    </div>
+  </div>
+</div>

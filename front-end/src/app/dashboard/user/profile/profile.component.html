@@ -1,1 +1,46 @@
-<p>profile works!</p>
+<div class="profile-container" *ngIf="user; else loading">
+  <h2>👤 Meu Perfil</h2>
+
+  <img [src]="user.photo || 'assets/default-profile.png'" alt="Foto de perfil" class="profile-photo" />
+
+  <div *ngIf="!isEditing; else editForm">
+    <p><strong>Nome:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Telefone:</strong> {{ user.phone }}</p>
+
+    <p><strong>Endereço:</strong><br />
+      {{ user.address.street }}, {{ user.address.number }}<br />
+      {{ user.address.city }} - {{ user.address.state }}<br />
+      CEP: {{ user.address.Cep }}
+    </p>
+
+    <button class="btn-green" (click)="enableEdit()">Editar Perfil</button>
+  </div>
+
+  <ng-template #editForm>
+    <label>Nome: <input type="text" [(ngModel)]="user.name" /></label><br />
+    <label>Telefone: <input type="text" [(ngModel)]="user.phone" /></label><br />
+    <label>Senha: <input type="password" [(ngModel)]="user.password" /></label><br />
+    <label>Rua: <input type="text" [(ngModel)]="user.address.street" /></label><br />
+    <label>Número: <input type="text" [(ngModel)]="user.address.number" /></label><br />
+    <label>Cidade: <input type="text" [(ngModel)]="user.address.city" /></label><br />
+    <label>Estado: <input type="text" [(ngModel)]="user.address.state" /></label><br />
+    <label>CEP: <input type="text" [(ngModel)]="user.address.Cep" /></label><br />
+
+    <button class="btn-green" (click)="save()">Salvar</button>
+    <button class="btn btn-danger p-10 pl-10" (click)="isEditing = false">Cancelar</button>
+  </ng-template>
+
+  <hr />
+
+  <h3>🧾 Pedidos Realizados</h3>
+  <ul>
+    <li *ngFor="let order of orders">
+      Pedido #{{ order.id }} - Mesa {{ order.tableId }} - Status: {{ order.status }}
+    </li>
+  </ul>
+</div>
+
+<ng-template #loading>
+  <p>Carregando perfil...</p>
+</ng-template>

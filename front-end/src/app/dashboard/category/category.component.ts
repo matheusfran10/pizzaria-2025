@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class CategoryComponent {
 categories = [
-    { id: '1', name: 'Pizzas', created_at: '2025-01-01' },
-    { id: '2', name: 'Bebidas', created_at: '2025-01-05' },
-    { id: '3', name: 'Sobremesas', created_at: '2025-01-10' },
+    { id: '1', name: 'Pizzas', created_at: '2025-01-01', updated_at: '2025-01-01' },
+    { id: '2', name: 'Bebidas', created_at: '2025-01-05', updated_at: '2025-05-01' },
+    { id: '3', name: 'Sobremesas', created_at: '2025-01-10', updated_at: '2025-08-01' },
   ];
 
  constructor() {}
