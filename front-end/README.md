@@ -1,27 +1,51 @@
-# FrontEnd
+# 🍕 Pizzaria Web
+Projeto de interface web responsiva desenvolvido com Angular, com foco em gestão de pizzaria, incluindo funcionalidades como cadastro de produtos, categorias e gerenciamento de pedidos. Ideal para sistemas internos de controle de restaurantes e pizzarias.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+---
 
-## Development server
+## ✨ Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- 🔐 Tela de login e cadastro de usuários
 
-## Code scaffolding
+- 📂 Cadastro de novas categorias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- 🍕 Cadastro de novos produtos, com seleção de categoria, descrição e valor
 
-## Build
+- 📦 Visualização de pedidos recebidos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- 📋 Detalhamento completo dos itens do pedido
 
-## Running unit tests
+- ⚙️ Componentização completa com Angular
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- 🎨 Layout moderno, escuro e responsivo com SCSS e Angular
 
-## Running end-to-end tests
+---
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 🧰 Tecnologias Utilizadas
 
-## Further help
+- Angular 17
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- TypeScript
+
+- HTML5
+
+- SCSS (CSS3)
+
+- Estrutura modular com Components
+
+- Organização de diretórios por contexto (auth, dashboard, services, guards, etc)
+
+---
+
+## 🚀 Como Executar
+
+Clone o repositório:
+
+git clone https://github.com/matheusfran10/pizzaria-angular.git
+
+cd frontend/pizzaria-web
+
+npm install
+
+ng serve
+
