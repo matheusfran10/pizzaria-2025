@@ -10,27 +10,37 @@
     >
       {{ cat.name }}
     </button>
+    <input
+      type="text"
+      placeholder="Pesquisar..."
+      [(ngModel)]="searchTerm"
+      class="search-input"
+    />
   </div>
 
-  <div class="product-card" *ngFor="let product of selectedCategory?.products">
-  <div class="card-content">
-    <img [src]="'/assets/' + product.banner" alt="{{ product.name }}" />
-    <div class="info">
-      <h4>{{ product.name }}</h4>
-      <p>{{ product.descripiton }}</p>
-      <p><strong>R$ {{ product.price.toFixed(2) }}</strong></p>
-      <button (click)="addToOrder(product)">Adicionar</button>
+  <div class="product-card" *ngFor="let product of selectedCategory?.products" >
+    <!-- <div class="card-content" *ngFor="let cat of filteredCategories(); index as i"> -->
+    <div class="card-content">
+      <img [src]="'/assets/' + product.banner" alt="{{ product.name }}" />
+      <div class="info">
+        <h4>{{ product.name }}</h4>
+        <p>{{ product.descripiton }}</p>
+        <p>
+          <strong>R$ {{ product.price.toFixed(2) }}</strong>
+        </p>
+        <button (click)="addToOrder(product)">Adicionar</button>
+      </div>
     </div>
   </div>
-</div>
-
 
   <div class="order-summary">
     <h3>Itens do Pedido</h3>
     <ul>
       <li *ngFor="let item of orderItems; let i = index">
         {{ item.name }} - R$ {{ item.price.toFixed(2) }}
-        <button (click)="removeFromOrder(i)">Remover</button>
+        <button class="btn btn-pedidos-red" (click)="removeFromOrder(i)">
+          Remover
+        </button>
       </li>
     </ul>
 
@@ -38,7 +48,12 @@
       <p>
         <strong>Total: R$ {{ totalPrice }}</strong>
       </p>
-      <button (click)="submitOrder()">Finalizar Pedido</button>
+      <a
+        class="btn btn-pedidos"
+        (click)="submitOrder()"
+        routerLink="/dashboard/pedidos/track"
+        >Finalizar Pedido</a
+      >
     </div>
   </div>
 </div>

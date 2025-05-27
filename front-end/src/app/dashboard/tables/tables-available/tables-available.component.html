@@ -1,0 +1,26 @@
+<div class="tables-container">
+  <h2>📋 Mesas Disponiveis</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Número</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let table of tables">
+        <td *ngIf="editingTableId !== table.id">{{ table.number }}</td>
+        <td *ngIf="editingTableId === table.id">
+          <input [(ngModel)]="newTableNumber" type="number" />
+        </td>
+
+        <td>{{ getStatusLabel(table.status) }}</td>
+
+        <td>
+          <a *ngIf="table.status === 0" class="btn btn-success" routerLink="/dashboard/pedidos/novo"> Abrir </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

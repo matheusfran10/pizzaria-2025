@@ -11,9 +11,9 @@ export class NewOrdersComponent {
 categories: Category[] = []; // Isso você pode buscar via serviço futuramente
   selectedCategory: Category | null = null;
   orderItems: Product[] = [];
-
+  searchTerm = '';
   ngOnInit(): void {
-    // Exemplo de dados mockados
+   
     this.categories = [
       {
         id: 1,
@@ -113,6 +113,12 @@ categories: Category[] = []; // Isso você pode buscar via serviço futuramente
   get totalPrice(): string {
   const total = this.orderItems.reduce((acc, p) => acc + p.price, 0);
   return total.toFixed(2);
+}
+
+filteredCategories() {
+  return this.categories.filter(cat =>
+    cat.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+  );
 }
 
 }

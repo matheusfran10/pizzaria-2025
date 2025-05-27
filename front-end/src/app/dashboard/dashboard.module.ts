@@ -20,6 +20,8 @@ import { NewCategoryComponent } from './category/new-category/new-category.compo
 import { EditCategoryComponent } from './category/edit-category/edit-category.component';
 import { OrdersDetailsComponent } from './orders/orders-details/orders-details.component';
 import { ListProductByCategoryComponent } from './produtc/list-product-by-category/list-product-by-category.component';
+import { TablesAvailableComponent } from './tables/tables-available/tables-available.component';
+import { TrackOrderComponent } from './orders/track-order/track-order.component';
 
 
 
@@ -42,12 +44,14 @@ import { ListProductByCategoryComponent } from './produtc/list-product-by-catego
     MenuCardapioComponent,
     OrdersDetailsComponent,
     ListProductByCategoryComponent,
+    TablesAvailableComponent,
+    TrackOrderComponent,
      
   ],
   imports: [
+    FormsModule,
     CommonModule,
     RouterModule,
-    FormsModule,
     HttpClientModule
   ]
 })

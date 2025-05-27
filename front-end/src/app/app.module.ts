@@ -15,16 +15,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
     NavbarComponent,
+    LayoutComponent,
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
-    RouterModule,
     // Módulos customizados
     AuthModule,
     DashboardModule,

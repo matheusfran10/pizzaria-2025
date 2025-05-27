@@ -1,17 +1,10 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { 
-  ReactiveFormsModule, 
-  FormControl,
-  FormGroupDirective,
-  NgForm,
-  Validators,
-  FormsModule, 
-} from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -20,8 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent
   ],
   imports: [
-    CommonModule,
     FormsModule,
+    CommonModule,
     RouterModule,
     HttpClientModule
   ]
